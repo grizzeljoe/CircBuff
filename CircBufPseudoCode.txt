@@ -34,10 +34,10 @@ do
   // Read from the file to the circbuffer
   if current (readcounter + n) <  N
      read n bytes to readBytePointer
-     (re)initialize to zero -> readcounter, readBytePointer
-  else
-     read (N-n) bytes
      increment readcounter, readBytePointer
+  else // It will be larger than the current CircBuffer "N" size
+     read (N-n) bytes
+     (re)initialize to zero -> readcounter, readBytePointer
      read (n mod N) bytes	
      increment readcounter, readBytePointer	
 
