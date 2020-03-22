@@ -34,7 +34,7 @@ do
   // Read from the file to the circbuffer
   if current (readcounter + n) <  N
      read n bytes to readBytePointer
-     increment readcounter, readBytePointer
+     (re)initialize to zero -> readcounter, readBytePointer
   else
      read (N-n) bytes
      increment readcounter, readBytePointer
