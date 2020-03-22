@@ -1,0 +1,51 @@
+Problem Statement
+ 
+Write a program to show linear buffer implementation of a circular buffer.
+ 
+Test Method:
+ 
+File Copy function:
+Copy a file using the circular buffer implementation.
+ 
+Flow of the copy function:
+ 
+Assuming N to be the buffer size
+ 
+1) Read bytes from the file
+2) Write the bytes to the buffer
+3) Read bytes from the buffer
+4) Write bytes to the new file
+ 
+Condition:
+ 
+1) n<N
+2) The implementation should work for any values for N and n
+ 
+	
+main (args of n, N, fileToRead, fileToWrite)
+
+malloc circbuffer N bytes
+create and initialize read and write bytepointers to circbuffer;
+localvars ints of read and write counter - initialize to zero 
+open fileoRead  read only
+create a fileToWrite for write access
+
+do
+  // Read from the file to the circbuffer
+  if current (readcounter + n) <  N
+     read n bytes to readBytePointer
+     increment readcounter, readBytePointer
+  else
+     read (N-n) bytes
+     increment readcounter, readBytePointer
+     read (n mod N) bytes	
+     increment readcounter, readBytePointer	
+
+  // Write to the file from the circbuffer
+  Similar activity writing the fileToWrite from the circular buffer
+  maintaining the writepointers and counters
+
+until (fileToRead is EOF)
+ 
+Close the fileToRead and fileToWrite files 
+end
